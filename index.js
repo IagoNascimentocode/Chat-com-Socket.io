@@ -13,9 +13,10 @@ io.on('connection',(socket)=>{
 
     console.log("new connection")
 
-    socket.emit('hello',{msg:"Seja bem vindo ao socket.io"})
+    socket.broadcast.emit('hello',{msg:'Chegou um novo usuario'})
 
     socket.on('hello_client_response',(data)=>{
         console.log(data.msg)
     })
+
 })
